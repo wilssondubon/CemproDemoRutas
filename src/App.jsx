@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     const fetchRutas = async () => {
       try {
-        const response = await axios.get("/rutas.json");
+        const response = await axios.get("https://wilssondubon.github.io/CemproDemoRutas/rutas.json");
         setRutas(response.data);
       } catch (error) {
         console.error("Error loading rutas.json:", error);

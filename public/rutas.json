@@ -1,0 +1,204 @@
+[
+	{
+		"DM": 2002562,
+		"Transporte": 1201578475,
+		"CentroCarga": {
+			"Nombre": "Planta San Gabriel (Punto A) San Juan Sacatepequez",
+			"Coordenadas": {
+				"Lat": 14.73297,
+				"Long": -90.69935
+			}
+		},
+		"Destino": {
+			"Nombre": "Huehuetango (Punto B)",
+			"Coordenadas": {
+				"Lat": 15.2842552,
+				"Long": -91.4688774
+			}
+		},
+		"RutaTransitar": {
+			"Trayecto": [
+				{
+					"Correlativo": 1,
+					"Nombre": "RutaPrivada"
+				},
+				{
+					"Correlativo": 2,
+					"Nombre": "Anillo Regional"
+				},
+				{
+					"Correlativo": 3,
+					"Nombre": "CA-1 Occidente"
+				},
+				{
+					"Correlativo": 4,
+					"Nombre": "(Ruta Interamericana) RN-9N"
+				}
+			],
+			"DistanciaIda": "234 kilometros",
+			"TiempoTransito": "6.5 horas",
+			"VelocidadPromedioCarga": "35 kilometros por hora",
+			"CondicionesRuta": [
+				{
+					"Correlativo": 1,
+					"Nombre": "Carretera de Asfalto"
+				},
+				{
+					"Correlativo": 2,
+					"Nombre": "Ruta Sinuosa"
+				},
+				{
+					"Correlativo": 3,
+					"Nombre": "Pendientes Pronunciadas (ascensos y descensos)"
+				},
+				{
+					"Correlativo": 4,
+					"Nombre": "Curvas cerradas y peligrosas"
+				},
+				{
+					"Correlativo": 5,
+					"Nombre": "Paso por poblados"
+				},
+				{
+					"Correlativo": 6,
+					"Nombre": "Zona de túmulos"
+				}
+			],
+			"Mensajes" :[
+				{
+					"Correlativo": 1,
+					"Indicaciones": "Al iniciar el viaje inspecciones sus frenos y si es necesario graduarlos"
+				},
+				{
+					"Correlativo": 2,
+					"Indicaciones": "Planifique su viaje"
+				},
+				{
+					"Correlativo": 3,
+					"Indicaciones": "Aplique Manejo defensivo"
+				},
+				{
+					"Correlativo": 4,
+					"Indicaciones": "Regule su velocidad"
+				},
+				{
+					"Correlativo": 5,
+					"Indicaciones": "En Pendientes: utilizar freno de motor o compresion"
+				},
+				{
+					"Correlativo": 6,
+					"Indicaciones": "Conduzca con cinturón de seguridad y luces encendidas"
+				},
+				{
+					"Correlativo": 7,
+					"Indicaciones": "No exceda limite de velocidad (70 km/h)"
+				},
+				{
+					"Correlativo": 8,
+					"Indicaciones": "Realice inspección 360 del entorno"
+				},
+				{
+					"Correlativo": 9,
+					"Indicaciones": "Recuerde Aislar y bloquear la unidad"
+				}
+			]
+		}
+	},
+	{
+		"DM": 1000605,
+		"Transporte": 1201578474,
+		"CentroCarga": {
+			"Nombre": "Planta San Miguel (Punto A) Sanarate",
+			"Coordenadas": {
+				"Lat": 14.81485,
+				"Long": -90.27749
+			}
+		},
+		"Destino": {
+			"Nombre": "Cobán, Alta Verapaz (Punto B)",
+			"Coordenadas": {
+				"Lat": 15.4749945,
+				"Long": -90.3696418
+			}
+		},
+		"RutaTransitar": {
+			"Trayecto": [
+				{
+					"Correlativo": 1,
+					"Nombre": "CA-9 Norte (Ruta al Atlántico)"
+				},
+				{
+					"Correlativo": 2,
+					"Nombre": "CA-14 (Ruta Cobán Alta Verapaz)"
+				}
+			],
+			"DistanciaIda": "171 kilometros",
+			"TiempoTransito": "4.5 horas",
+			"VelocidadPromedioCarga": "37 kilometros por hora",
+			"CondicionesRuta": [
+				{
+					"Correlativo": 1,
+					"Nombre": "Carretera de Asfalto"
+				},
+				{
+					"Correlativo": 2,
+					"Nombre": "Ruta Sinuosa"
+				},
+				{
+					"Correlativo": 3,
+					"Nombre": "Pendientes Pronunciadas (ascensos y descensos)"
+				},
+				{
+					"Correlativo": 4,
+					"Nombre": "Curvas cerradas y peligrosas"
+				},
+				{
+					"Correlativo": 5,
+					"Nombre": "Paso por poblados"
+				},
+				{
+					"Correlativo": 6,
+					"Nombre": "Zona de túmulos"
+				}
+			],
+			"Mensajes" :[
+				{
+					"Correlativo": 1,
+					"Indicaciones": "Al iniciar el viaje inspecciones sus frenos y si es necesario graduarlos"
+				},
+				{
+					"Correlativo": 2,
+					"Indicaciones": "Planifique su viaje"
+				},
+				{
+					"Correlativo": 3,
+					"Indicaciones": "Aplique Manejo defensivo"
+				},
+				{
+					"Correlativo": 4,
+					"Indicaciones": "Regule su velocidad"
+				},
+				{
+					"Correlativo": 5,
+					"Indicaciones": "En Pendientes: utilizar freno de motor o compresion"
+				},
+				{
+					"Correlativo": 6,
+					"Indicaciones": "Conduzca con cinturón de seguridad y luces encendidas"
+				},
+				{
+					"Correlativo": 7,
+					"Indicaciones": "No exceda limite de velocidad (70 km/h)"
+				},
+				{
+					"Correlativo": 8,
+					"Indicaciones": "Realice inspección 360 del entorno"
+				},
+				{
+					"Correlativo": 9,
+					"Indicaciones": "Recuerde Aislar y bloquear la unidad"
+				}
+			]
+		}
+	}
+]

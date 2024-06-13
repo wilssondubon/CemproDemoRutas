@@ -5,7 +5,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaVolumeUp } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup,Polyline  } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import L from "leaflet";
 import axios from "axios";
 import { Globals } from "../app.config";
@@ -77,8 +77,6 @@ function App() {
     });
   };
 
-  
-
   return (
     <div className="w-100">
       <h1>Buscar Ruta por DM</h1>
@@ -134,6 +132,151 @@ function App() {
           </div>
         </div>
       )}
+      <div className="card mt-4 w-10">
+        <div className="card-header">
+          <h2>Datos de prueba</h2>
+        </div>
+        <div className="card-body">
+          <div className="row">
+            <div className="col-sm-6">
+              <table>
+                <tr>
+                  <th>DM 2002562</th>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Transporte:</b> 1201578475
+                    <br />
+                    <b>Centro de Carga:</b> Planta San Gabriel (Punto A) San Juan Sacatepéquez
+                    <br />
+                    <b>Coordenadas:</b> 14.72397, -90.69935
+                    <br />
+                    <br />
+                    <b>Destino – Cliente:</b> Huehuetenango (punto B)
+                    <br />
+                    <b>Coordenadas:</b> 15.2842552, -91.4688774
+                    <br />
+                    <br />
+                    <b>Ruta a Transitar:</b> Ruta Privada, Anillo Regional, CA-1 Occidente, (Ruta Interamericana) RN-9N
+                    <br />
+                    <br />
+                    <b>Distancia ida:</b> 234 Km
+                    <br />
+                    <b>Tiempo de tránsito:</b> 6.5 horas
+                    <br />
+                    <b>Velocidad promedio cargado:</b> 35 km/h
+                    <br />
+                    <br />
+                    <b>Condiciones de ruta:</b>
+                    <br />
+                    - Carretera de Asfalto
+                    <br />
+                    - Ruta Sinuosa
+                    <br />
+                    - Pendientes pronunciados (ascensos y descensos)
+                    <br />
+                    - Curvas cerradas y peligrosas
+                    <br />
+                    - Paso por poblados
+                    <br />
+                    - Zona de túmulos
+                    <br />
+                    <br />
+                    <b>Mensajes de recomendación:</b>
+                    <br />
+                    - Al iniciar viaje inspeccione sus frenos y si es necesario graduarlos!
+                    <br />
+                    - Planifique su viaje
+                    <br />
+                    - Aplique Manejo defensivo
+                    <br />
+                    - Regule su velocidad
+                    <br />
+                    - En Pendientes: utilizar freno de motor o compresión.
+                    <br />
+                    - Conduzca con cinturón de seguridad y luces encendidas.
+                    <br />
+                    - No exceda límite de velocidad (70 km/h)
+                    <br />
+                    - Realice inspección 360 del entorno.
+                    <br />- Recuerde aislar y bloquear su unidad.
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div className="col-sm-6">
+              <table>
+                <tr>
+                  <th>DM 1000605</th>
+                </tr>
+                <tr>
+                  <td>
+                    <b>Transporte:</b> 1201578474
+                    <br />
+                    <b>Centro de Carga:</b> Planta San Miguel (Punto A) Sanarate
+                    <br />
+                    <b>Coordenadas:</b> 14.81485, -90.27749
+                    <br />
+                    <br />
+                    <b>Destino-Cliente:</b> Cobán, Alta Verapaz (Punto B)
+                    <br />
+                    <b>Coordenadas:</b> 15.4749945, -90.3696418
+                    <br />
+                    <br />
+                    <b>Ruta a Transitar:</b>
+                    <br />
+                    - CA-9 NORTE (Ruta al Atlántico)
+                    <br />
+                    - CA-14 (Ruta a Cobán Alta Verapaz)
+                    <br />
+                    <br />
+                    <b>Distancia ida:</b> 171 Km
+                    <br />
+                    <b>Tiempo de tránsito:</b> 4.5 horas
+                    <br />
+                    <b>Velocidad promedio cargado:</b> 37 km/h
+                    <br />
+                    <br />
+                    <b>Condiciones de ruta:</b>
+                    <br />
+                    - Carretera de Asfalto
+                    <br />
+                    - Ruta Sinuosa
+                    <br />
+                    - Pendientes pronunciados (ascensos y descensos)
+                    <br />
+                    - Curvas cerradas y peligrosas
+                    <br />
+                    - Paso por poblados
+                    <br />
+                    - Zona de túmulos
+                    <br />
+                    <br />
+                    <b>Mensajes de recomendación:</b>
+                    <br />
+                    - Al iniciar viaje inspeccione sus frenos y si es necesario graduarlos!
+                    <br />
+                    - Planifique su viaje
+                    <br />
+                    - Aplique Manejo defensivo
+                    <br />
+                    - Regule su velocidad
+                    <br />
+                    - En Pendientes: utilizar freno de motor o compresión.
+                    <br />
+                    - Conduzca con cinturón de seguridad y luces encendidas
+                    <br />
+                    - No exceda límite de velocidad (70 km/h)
+                    <br />
+                    - Realice inspección 360 del entorno.
+                    <br />- Recuerde aislar y bloquear su unidad.
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

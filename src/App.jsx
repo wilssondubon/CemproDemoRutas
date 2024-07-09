@@ -5,9 +5,14 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaVolumeUp } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import L from "leaflet";
 import axios from "axios";
+import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
+import "leaflet-routing-machine";
+import PropTypes from "prop-types";
 import { Globals } from "../app.config";
 
 const blueIcon = new L.Icon({
@@ -28,6 +33,55 @@ const greenIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
+const Gallery = ({ images }) => {
+  return (
+    <Carousel>
+      {images.map((image, index) => (
+        <div key={index}>
+          <img src={image} alt={`Gallery image ${index + 1}`} />
+        </div>
+      ))}
+    </Carousel>
+  );
+};
+
+Gallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+const RoutingControl = ({ start, end }) => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!map) return;
+
+    const routingControl = L.Routing.control({
+      waypoints: [L.latLng(start.Lat, start.Long), L.latLng(end.Lat, end.Long)],
+      routeWhileDragging: true,
+      createMarker: () => null, // Evita la creación de marcadores
+      addWaypoints: false, // Evita agregar puntos intermedios
+      show: false, // Oculta las instrucciones
+    }).addTo(map);
+
+    return () => {
+      map.removeControl(routingControl);
+    };
+  }, [map, start, end]);
+
+  return null;
+};
+
+RoutingControl.propTypes = {
+  start: PropTypes.shape({
+    Lat: PropTypes.number.isRequired,
+    Long: PropTypes.number.isRequired,
+  }).isRequired,
+  end: PropTypes.shape({
+    Lat: PropTypes.number.isRequired,
+    Long: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
 function App() {
   const [rutas, setRutas] = useState([]);
   const [searchDM, setSearchDM] = useState("");
@@ -46,6 +100,22 @@ function App() {
 
     fetchRutas();
   }, []);
+
+  const [showGallery, setShowGallery] = useState(false);
+  const images = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKx2CVzBvxei_h9a6NmT_dwVVo4Lwq_7R7ZQ&s", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxq_6v3RT-UM0FHVBARteiBsH64wfk0sa7Bw&s", 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROwrS3LyPRoZom0LfH0E7isqs4W8QC52eDSg&s"
+  ];
+
+  const handleMarkerClick = () => {
+    setShowGallery(true);
+    console.log("ver galeria");
+  };
+
+  const handleCloseGallery = () => {
+    setShowGallery(false);
+  };
 
   const handleSearch = () => {
     const ruta = rutas.find((r) => r.DM.toString() === searchDM);
@@ -92,8 +162,15 @@ function App() {
                 <Popup>{selectedRuta.CentroCarga.Nombre}</Popup>
               </Marker>
               <Marker position={[selectedRuta.Destino.Coordenadas.Lat, selectedRuta.Destino.Coordenadas.Long]} icon={greenIcon}>
-                <Popup>{selectedRuta.Destino.Nombre}</Popup>
+                <Popup>
+                  {selectedRuta.Destino.Nombre}
+                  <br />
+                  <a role="button" onClick={handleMarkerClick}>
+                    Ver Imagenes...
+                  </a>{" "}
+                </Popup>
               </Marker>
+              <RoutingControl start={selectedRuta.CentroCarga.Coordenadas} end={selectedRuta.Destino.Coordenadas} />
             </MapContainer>
           </div>
           <div className="col-md-6">
@@ -277,6 +354,14 @@ function App() {
           </div>
         </div>
       </div>
+      {showGallery && (
+        <div className="gallery-modal">
+          <div className="gallery-content">
+            <button onClick={handleCloseGallery}>Close</button>
+            <Gallery images={images} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

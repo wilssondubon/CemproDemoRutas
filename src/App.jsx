@@ -87,6 +87,7 @@ function App() {
   const [searchDM, setSearchDM] = useState("");
   const [selectedRuta, setSelectedRuta] = useState(null);
   const [readingIndex, setReadingIndex] = useState(-1);
+  const [dmParameter, setDmParameter] = useState();
 
   useEffect(() => {
     const fetchRutas = async () => {
@@ -99,7 +100,37 @@ function App() {
     };
 
     fetchRutas();
+
+    const valores = window.location.search;
+    const urlParams = new URLSearchParams(valores);
+    const dm = urlParams.get('DM');
+
+    if (dm)
+    {
+      console.log(dm);
+      if (dm === "AFopjwfAzTKt")
+      {
+        console.log("econtrado ruta 1")
+        setSearchDM("2002562");
+        setDmParameter("2002562");
+      }
+      if (dm === "GrypB9E2")
+      {
+        console.log("econtrado ruta 2")
+        setSearchDM("1000605");
+        setDmParameter("1000605");
+      }
+      
+    }
   }, []);
+
+  useEffect(()=> {
+    if (dmParameter)
+    {
+      console.log("vamos a decirlo ", dmParameter)
+      handleSearch();
+    }
+  }, [dmParameter])
 
   const [showGallery, setShowGallery] = useState(false);
   const images = [
